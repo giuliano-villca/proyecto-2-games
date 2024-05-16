@@ -1,0 +1,29 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+    a{
+    color:black;
+}
+
+header{
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    background-color: #ffb200;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo{
+    display: flex;
+}
+
+.logo img{
+    height: 70px;
+}
+
+nav a{
+    font-weight: 600;
+    padding-right: 15px;
+}
