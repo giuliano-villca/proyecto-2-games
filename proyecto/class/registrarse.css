@@ -1,0 +1,109 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-image: url(../img/fondo-estrellas.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+header{
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    background-color: #ffb200;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo img{
+    height: 70px;
+}
+form {
+    max-width: 350px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #ffb200;
+    padding: 20px;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 50px;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    text-align: center;
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"]
+
+ {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+ .form-group button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #d8d7d7;
+    color: #000000;
+    border: none;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-group.button-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:active {
+    background-color: #3e8e41;
+  }
+  
+  .form-group button a {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .form-group button:hover {
+    background-color: #45a049;
+  }
+  
+  .form-group button:active {
+    background-color: #3e8e41;
+  }
