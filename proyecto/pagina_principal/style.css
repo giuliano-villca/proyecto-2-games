@@ -1,0 +1,489 @@
+body{
+    font-family: "Quicksand", sans-serif;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    background-color: #090d1f;
+    color: #fff;
+}
+
+.contentBody{
+    margin-left: 150px;
+}
+
+header{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    height: 50px;
+    padding: 0px 30px 0px 30px;
+    background-color: #090d1f;
+    box-shadow: 0 0 5px #000;
+}
+
+header ul{
+    display: flex;
+    padding-right: 30px;
+    
+}
+
+header ul li{
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+
+header ul li a:hover{
+    opacity: 1;
+}
+
+.listTema{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    padding: 30px 0px 0px 0px;
+    height: 100%;
+    background-color: #070a18;
+}
+
+.listTema ol li{  
+    list-style-type: none;
+    padding: 20px 50px 20px 20px;
+    border-bottom: 1px solid #813dff94
+}
+
+.listTema ol li a{
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+
+.listTema ol li a:hover{
+    opacity: 1;
+}
+
+.listTema ol li ol li{
+    padding-left: 0;
+    border-bottom: 0;
+    width: 0;
+}
+
+.listTema ol li ol{
+    display: none;
+}
+
+.listTema ol li:hover > ol{
+    display: block;
+}
+
+ol{
+    padding: 0px 0px 0px 0px;
+}
+
+h1{
+    font-weight: normal;
+}
+h2{
+    font-weight: normal;
+}
+h3{
+    font-weight: normal;
+}
+
+.content{
+    padding: 20px 40px 20px 40px;
+    margin-top: 50px;
+}
+
+.content p{
+    line-height: 2;
+}
+
+.content h1{
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #813dffad;
+}
+
+.content h2{
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.box{
+    border-bottom: 1px solid #813dff;
+    padding-bottom: 30px;
+    margin-bottom: 70px;
+}
+
+.welcome{
+    position: relative;
+    font-size: xx-large;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    height: 800px;
+    color: #fff;
+}
+
+video{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 800px;
+    top: 0;
+    left: 0;
+}
+
+.welcome h1{
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 1;
+}
+
+span{
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 50px 50px 50px 50px;
+    max-width: 25rem;
+    margin-right: 5%;
+    background-color: #000000bb;
+    z-index: 1;
+}
+
+span p{
+    margin: 0;
+}
+
+.download{
+    margin-top: 40px;
+}
+
+.download a{
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #813dff;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.download a:hover{
+    padding: 10px 50px;
+    color: #fff;
+    background-color: #813dff;
+}
+
+.character{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.character::after{
+    content: '';
+    position: absolute;
+    width: 500%;
+    height: 900%;
+    background-image: conic-gradient(transparent, transparent, #4c00af);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+.character::before{
+    content: '';
+    position: absolute;
+    width: 500%;
+    height: 900%;
+    background-image: conic-gradient(transparent, transparent, #af0098);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.character .character_1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #090d1f;
+    z-index: 1;
+    margin: 3px;
+}
+
+.character_1 p{
+    padding: 0px 50px;
+}
+
+.character_1 img{
+    height: 300px;
+    width: 300px;
+}
+
+.character .character_2{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #090d1f;
+    z-index: 1;
+    margin: 3px;
+}
+
+.character_2 img{
+    height: 300px;
+    width: 300px;
+}
+
+.character_2 p{
+    text-align: right;
+    padding: 0px 50px;
+}
+
+.everyInt{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    background-color: #0a0a0a;
+    padding: 50px 0px 50px 0px;
+    margin: 100px 0px;
+}
+
+.everyInt h1{
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    width: 500px;
+    border-bottom: 1px solid;
+    border-bottom-color: #813dff8a;
+}
+
+.integrantes{
+    display: flex;
+}
+
+.integrante{
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #813dff;
+    margin: 25px 45px 25px 45px;
+    padding: 20px 0px 0px 0px;
+    border-radius: 50px;
+}
+
+.integrante p{
+    padding: 25px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: #fff;
+    background-color: #813dff;
+}
+
+.integrante h2{
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.integrante img{
+    border-radius: 50%;
+    height: 20vh;
+    width: 20vh;
+}
+
+/*Responsive*/
+@media(max-width:700px) {
+    header{
+        padding: 20px 20px 20px 20px;
+    }
+    header ul{
+        display: block;
+        text-align: right;
+        padding-right: 20px;
+    }
+    .contentBody{
+        margin-left: 0;
+    }
+    .listTema{
+        display: none;
+    }
+}
+@media(max-width:950px) {
+    .character_1{
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+    }
+    .character_1 img{
+        border-radius: 15px;
+    }
+    .character_1 p{
+        text-align: center;
+    }
+    .character_2{
+        flex-direction: column !important;
+        width: 100%;
+        padding: 10px;
+    }
+    .character_2 img{
+        border-radius: 15px;
+    }
+    .character_2 p{
+        text-align: center;
+    }
+}
+@media(max-width:1000px) {
+    .welcome{
+        justify-content: center;
+        align-items: center; 
+    }
+    .welcome h1{
+        display: none;
+    }
+    span{
+        margin: 0;
+    }
+}
+@media (max-width:1450px) {
+    .everyInt{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+    }
+    .integrantes{
+        display: block!important;
+        width: 480px;
+    }
+}
+@media(min-width:1650px) {
+    .integrante{
+        height: 400px;
+    }
+    .integrante p{
+        margin-bottom: 0!important;
+        padding-bottom: 50px!important;
+    }
+    .content p{
+        font-size: 140%;
+    }
+}
+@media(min-width:1450px){
+    .integrante{
+        height: 450px;
+    }    
+}
+
+
+
+footer{
+    margin-left: 150px;
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+.footerContainer{
+    width: 100%;
+    padding: 30px 0px 30px 0px;
+}
+
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover{
+    background-color: #000;
+}
+
+.socialIcons a i{
+    font-size: 2em;
+    color: #000;
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+.socialIcons a i:hover{
+    color: #fff;
+    opacity: 1;
+}
+
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.footerNav ul li a{
+    text-decoration: none;
+    font-size: 15px;
+    margin: 20px;
+    color: #fff;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+
+.footerBottom{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.designed{
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    margin: 0px 5px;
+    padding: 0;
+}
+
+/*Responsive*/
+@media(max-width:700px) {
+    footer{
+        margin-left: 0px;
+    }
+}
