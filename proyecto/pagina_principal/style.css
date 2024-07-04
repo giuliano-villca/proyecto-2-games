@@ -213,6 +213,25 @@ span p{
     animation: animate 4s linear infinite;
 }
 
+.box .scenary{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(600px, 1fr));
+    box-sizing: border-box;
+    justify-items: center;
+}
+
+.box .scenary img{
+    width: auto;
+    height: 350px;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.box .scenary img:hover{
+    transform: scale(1.1);
+}
+
 @keyframes animate{
     0%{
         transform: rotate(0deg);
@@ -353,6 +372,13 @@ span p{
     }
     .character_2 p{
         text-align: center;
+    }
+    .box .scenary{
+        display: block;
+    }
+    .box .scenary img{
+        height: 200px;
+        margin: 10px 10px 10px 10px;
     }
 }
 @media(max-width:1000px) {
