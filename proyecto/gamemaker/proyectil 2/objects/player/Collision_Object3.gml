@@ -1,0 +1,1 @@
+recibir_dano(50); // Resta 10 de vida al personaje
