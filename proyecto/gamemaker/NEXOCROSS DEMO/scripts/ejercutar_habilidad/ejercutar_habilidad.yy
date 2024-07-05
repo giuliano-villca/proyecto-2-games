@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ejercutar_habilidad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ejercutar_habilidad",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

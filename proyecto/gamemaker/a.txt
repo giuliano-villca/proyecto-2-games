@@ -1,0 +1,296 @@
+//obj_control evento create
+global.panel_width = 64;  // Ancho de cada panel
+global.panel_height = 64; // Alto de cada panel
+
+var rows = 3;
+var columns = 6;
+
+// Crear un arreglo para almacenar los paneles
+global.panels = array_create(rows, array_create(columns, {tipo: 0, propietario: 0}));
+
+// Inicializar los paneles con valores. 0 = panel neutro, 1 = panel del jugador, 2 = panel del enemigo
+for (var i = 0; i < rows; i++) {
+    for (var j = 0; j < columns; j++) {
+        var panel = {};
+        panel.tipo = 0; // 0 = panel neutro
+        if (j < 3) {
+            panel.propietario = 1; // Panel del jugador
+        } else {
+            panel.propietario = 2; // Panel del enemigo
+        }
+        global.panels[i][j] = panel;
+    }
+}
+// Inicializar la extensión del área del jugador
+global.player_area_extension = 3;
+
+// Calcular el desplazamiento para centrar la cuadrícula en el room
+global.grid_offset_x = (room_width - (columns * global.panel_width)) / 2;
+global.grid_offset_y = (room_height - (rows * global.panel_height)) / 2;
+
+global.temporary_panels = [];
+global.panel_return_time = 5 * room_speed; // Ajusta este valor según sea necesario
+global.panel_timer = global.panel_return_time;
+
+// Definir habilidades y colores
+global.habilidades = [
+    {name: "PanelGrab", color: c_blue}
+    // Agrega más habilidades aquí
+];
+// Inicializar los paneles con la estructura deseada
+global.panels = [
+    [{tipo: 1, propietario: 1}, {tipo: 1, propietario: 1}, {tipo: 1, propietario: 1}, {tipo: 1, propietario: 2}, {tipo: 1, propietario: 2}, {tipo: 1, propietario: 2}],
+    [{tipo: 1, propietario: 1}, {tipo: 1, propietario: 1}, {tipo: 1, propietario: 1}, {tipo: 1, propietario: 2}, {tipo: 1, propietario: 2}, {tipo: 1, propietario: 2}],
+    [{tipo: 1, propietario: 1}, {tipo: 1, propietario: 1}, {tipo: 1, propietario: 1}, {tipo: 1, propietario: 2}, {tipo: 1, propietario: 2}, {tipo: 1, propietario: 2}]
+];
+
+// Evento Step en obj_control para manejar el retorno de paneles robados y el retroceso
+if (global.panel_timer > 0) {
+    global.panel_timer -= 1;
+} else {
+    // Devolver todos los paneles robados al estado original
+    for (var i = array_length(global.temporary_panels) - 1; i >= 0; i--) {
+        var panel_info = global.temporary_panels[i];
+        
+        // Restaurar el propietario original del panel
+        global.panels[panel_info.row][panel_info.col].propietario = panel_info.original_propietario;
+
+        // Verificar si el jugador o enemigo está encima del panel que está siendo devuelto
+        var entity;
+        if (panel_info.entity_type == "obj_player") {
+            entity = obj_player;
+        } else if (panel_info.entity_type == "obj_enemy") {
+            entity = obj_enemy;
+        } else {
+            array_delete(global.temporary_panels, i, 1); // Eliminar de la lista de paneles temporales si el tipo de entidad no es válido
+            continue;
+        }
+
+        var entity_col = floor((entity.x - global.grid_offset_x) / global.panel_width);
+        var entity_row = floor((entity.y - global.grid_offset_y) / global.panel_height);
+
+        if (entity_col == panel_info.col && entity_row == panel_info.row) {
+            // Mover la entidad hacia atrás hasta que esté en un panel propio
+            while (true) {
+                entity_col = floor((entity.x - global.grid_offset_x) / global.panel_width);
+                entity_row = floor((entity.y - global.grid_offset_y) / global.panel_height);
+
+                // Si la entidad es el jugador, se mueve a la izquierda
+                if (panel_info.entity_type == "obj_player" && entity_col > 0 && global.panels[entity_row][entity_col - 1].propietario == 1) {
+                    entity.x -= global.panel_width;
+                } 
+                // Si la entidad es el enemigo, se mueve a la derecha
+                else if (panel_info.entity_type == "obj_enemy" && entity_col < array_length(global.panels[0]) - 1 && global.panels[entity_row][entity_col + 1].propietario == 2) {
+                    entity.x += global.panel_width;
+                } 
+                else {
+                    break;
+                }
+            }
+        }
+
+        array_delete(global.temporary_panels, i, 1); // Eliminar de la lista de paneles temporales
+    }
+
+    // Reiniciar el temporizador global
+    global.panel_timer = global.panel_return_time;
+}
+
+// Evento Draw de obj_control
+draw_self(); // Dibuja el objeto normalmente si tiene una sprite
+
+// Ajustar la posición y formato del texto
+var start_x = 700; // Posición X inicial
+var start_y = 600; // Posición Y inicial, debajo del escenario
+var spacing = 20; // Espacio entre cada habilidad
+var rect_padding = 5; // Espacio de relleno alrededor del texto
+var rect_width = 200; // Ancho del rectángulo de fondo
+var rect_height = spacing * array_length(global.habilidades) + rect_padding * 2; // Altura del rectángulo de fondo
+
+// Dibujar el rectángulo de fondo con color
+draw_set_color(c_gray); // Color del fondo
+draw_rectangle(start_x - rect_padding, start_y - rect_padding, start_x + rect_width, start_y + rect_height, false);
+
+
+// Dibujar cada habilidad en la lista con su color
+for (var i = 0; i < array_length(global.habilidades); i++) {
+    var habilidad = global.habilidades[i];
+    draw_set_color(habilidad.color);
+    draw_text(start_x, start_y + i * spacing, habilidad.name);
+}
+
+// Restablecer el color a blanco para otros dibujos
+draw_set_color(c_white);
+
+//obj_grid evento draw
+for (var i = 0; i < array_length(global.panels); i++) {
+    for (var j = 0; j < array_length(global.panels[i]); j++) {
+        var panel = global.panels[i][j];
+        var panel_x = global.grid_offset_x + (j * global.panel_width);
+        var panel_y = global.grid_offset_y + (i * global.panel_height);
+        var panel_width = global.panel_width;
+        var panel_height = global.panel_height;
+
+        // Establecer color del panel según su tipo y propietario
+        switch(panel.tipo) {
+            case 0: // Panel neutro
+                draw_set_color(c_white);
+                break;
+            case 1: // Panel normal
+                if (panel.propietario == 1) {
+                    draw_set_color(c_blue); // Panel normal del jugador
+                } else if (panel.propietario == 2) {
+                    draw_set_color(c_red); // Panel normal del enemigo
+                }
+                break;
+            case 2: // panel hielo
+                if (panel.propietario == 1) {
+                    draw_set_color(c_silver); // Panel tipo 2 del jugador
+                } else if (panel.propietario == 2) {
+                    draw_set_color(c_aqua); // Panel tipo 2 del enemigo
+                }
+                break;
+            case 3: // Panel de pasto
+                if (panel.propietario == 1) {
+                    draw_set_color(c_green); // Panel de pasto del jugador
+                } else if (panel.propietario == 2) {
+                    draw_set_color(c_maroon); // Panel de pasto del enemigo
+                }
+                break;
+            case 4: // Panel de lava
+                if (panel.propietario == 1) {
+                    draw_set_color(c_orange); // Panel de hielo del jugador
+                } else if (panel.propietario == 2) {
+                    draw_set_color(c_yellow); // Panel de hielo del enemigo
+                }
+                break;
+            default:
+                draw_set_color(c_gray); // Valor predeterminado para tipos desconocidos
+                break;
+        }
+
+        draw_rectangle(panel_x, panel_y, panel_x + panel_width, panel_y + panel_height, false);
+
+        // Dibujar línea verde alrededor del panel de pasto
+        if (panel.tipo == 3) {
+            draw_set_color(c_lime);
+            draw_rectangle(panel_x, panel_y, panel_x + panel_width, panel_y + panel_height, true);
+        }
+        // Dibujar línea negra alrededor de otros tipos de paneles
+        else {
+            draw_set_color(c_black);
+            draw_rectangle(panel_x, panel_y, panel_x + panel_width, panel_y + panel_height, true);
+        }
+    }
+}
+
+// Evento Create en obj_player
+player_row = 1;
+player_col = 1;
+x = global.grid_offset_x + (player_col * global.panel_width);
+y = global.grid_offset_y + (player_row * global.panel_height);
+
+// Lógica de movimiento del jugador en el evento Step de obj_player
+var new_x = x;
+var new_y = y;
+
+if (keyboard_check_pressed(vk_left)) {
+    new_x -= global.panel_width;
+} else if (keyboard_check_pressed(vk_right)) {
+    new_x += global.panel_width;
+} else if (keyboard_check_pressed(vk_up)) {
+    new_y -= global.panel_height;
+} else if (keyboard_check_pressed(vk_down)) {
+    new_y += global.panel_height;
+}
+
+// Verificar si la nueva posición está dentro de los límites del grid
+var new_col = floor((new_x - global.grid_offset_x) / global.panel_width);
+var new_row = floor((new_y - global.grid_offset_y) / global.panel_height);
+
+
+
+// Verificar si la nueva posición está dentro de los límites del tablero y es un panel válido para moverse
+if (new_col >= 0 && new_col < array_length(global.panels[0]) &&
+    new_row >= 0 && new_row < array_length(global.panels) &&
+    global.panels[new_row][new_col].propietario == 1) {
+    // Permitir el movimiento a los paneles del jugador (propietario 1)
+    x = new_x;
+    y = new_y;
+}
+// Evento Step en obj_player para el manejo automático de retroceso
+var current_col = floor((x - global.grid_offset_x) / global.panel_width);
+var current_row = floor((y - global.grid_offset_y) / global.panel_height);
+
+// Verificar si el jugador está sobre un panel robado y su tiempo se ha agotado
+if (global.panel_timer <= 0 && global.panels[current_row][current_col].tipo == 4) {
+    // Retroceder automáticamente en la misma fila del panel robado
+    if (global.panels[current_row][current_col].propietario == 1) {
+        // Si el panel robado es del jugador, retrocede hacia la izquierda si es posible
+        if (current_col > 0 && (global.panels[current_row][current_col - 1].propietario == 1 || global.panels[current_row][current_col - 1].tipo == 4)) {
+            x -= global.panel_width;
+        }
+    } else if (global.panels[current_row][current_col].propietario == 2) {
+        // Si el panel robado es del enemigo, retrocede hacia la derecha si es posible
+        if (current_col < array_length(global.panels[0]) - 1 && (global.panels[current_row][current_col + 1].propietario == 2 || global.panels[current_row][current_col + 1].tipo == 4)) {
+            x += global.panel_width;
+        }
+    }
+}
+// Habilidad PanelGrab (presionando la tecla 'C')
+if (keyboard_check_pressed(ord("C"))) {
+    (panel_grab("obj_player")); // Llama a la función panel_grab para robar la columna entera de paneles enemigos
+}
+if (keyboard_check_pressed(ord("X"))) {
+    (realpanel_grab("obj_player")); // Llama a la función panel_grab para robar un panel de paneles enemigos
+}
+if (keyboard_check_pressed(ord("P"))) {
+    cambiar_paneles_a_pasto();
+}
+// Evento create en obj_enemy
+enemy_row = 1;
+enemy_col = 4;
+x = global.grid_offset_x + (enemy_col * global.panel_width);
+y = global.grid_offset_y + (enemy_row * global.panel_height);
+
+// Evento Step en obj_enemy
+var new_x = x;
+var new_y = y;
+
+// Detectar entradas del teclado y ajustar la posición del enemigo en consecuencia
+if (keyboard_check_pressed(ord("A"))) {
+    new_x -= global.panel_width;
+} else if (keyboard_check_pressed(ord("D"))) {
+    new_x += global.panel_width;
+} else if (keyboard_check_pressed(ord("W"))) {
+    new_y -= global.panel_height;
+} else if (keyboard_check_pressed(ord("S"))) {
+    new_y += global.panel_height;
+}
+
+// Verificar si la nueva posición está dentro de los límites del grid
+var new_col = floor((new_x - global.grid_offset_x) / global.panel_width);
+var new_row = floor((new_y - global.grid_offset_y) / global.panel_height);
+
+if (new_col >= 0 && new_col < array_length(global.panels[0]) &&
+    new_row >= 0 && new_row < array_length(global.panels) &&
+    global.panels[new_row][new_col].propietario == 2) {
+    // Permitir el movimiento a los paneles del enemigo (propietario 2)
+    x = new_x;
+    y = new_y;
+
+    // Actualizar la fila y columna del enemigo
+    enemy_col = new_col;
+    enemy_row = new_row;
+}
+// Habilidad PanelGrab (presionando la tecla 'f')
+if (keyboard_check_pressed(ord("F"))) {
+    panel_grab("obj_enemy"); // Llama a la función panel_grab para robar la columna entera de paneles enemigos
+}
+if (keyboard_check_pressed(ord("G"))) {
+    realpanel_grab("obj_enemy") ; // Llama a la función panel_grab para robar la columna entera de paneles enemigos
+}
+if (keyboard_check_pressed(ord("H"))) {
+    heladera();
+}
+
