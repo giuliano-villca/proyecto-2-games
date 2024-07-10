@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"script_check_row_and_damage",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"script_check_row_and_damage",
+  "parent":{
+    "name":"habilidad",
+    "path":"folders/Scripts/habilidad.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
