@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"bola_de_fuego",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bola_de_fuego",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
