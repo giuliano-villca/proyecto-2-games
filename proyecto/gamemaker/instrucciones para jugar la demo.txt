@@ -4,22 +4,30 @@ con el mouse presione en el boton estar
 
 paso 2 
 
-con las flechas arriba y abajo podes selecionar 4 habilidades con spaces
-y si quiere quitar uno precione backspace, despues que hayas selecionado
-las habilidades con el mouse presione en el boton rojo
+controles del jugador:
+con las flechas arriba y abajo podes selecionar 4 habilidades con "U"
+y si quiere quitar uno precione "I", despues que hayas selecionado
+las habilidades con el mouse presione en el boton rojo que dice combate
+
+controles del enemigo:
+con las teclas "W" y "S" podes selecionar 4 habilidades con "F"
+y si quiere quitar uno precione "G", despues que hayas selecionado
+las habilidades con el mouse presione en el boton rojo que dice combate
 
 paso 3
 
-con las flechas del teclado controla al jugador, y con "z", "X", "C", "V"
+controles del jugador:
+con las flechas del teclado controla al jugador, y con "U", "I", "O", "P"
 podes activar las habilidades que hayas elegido segun su orden, por ejemplo:
-si eligi primero bola de fuego lo activare con z y luego seleciono la habilidad heladera
-, lo activare con X
+si eligi primero bola de fuego lo activare con U y luego seleciono la habilidad heladera
+, lo activare con I
+
+controles del enemigo:
+con las teclas "a", "w", "s" "d" controla al enemigo, y con "F", "G", "H", "J"
+podes activar las habilidades que hayas elegido segun su orden, por ejemplo:
+si eligi primero bola de fuego lo activare con F y luego seleciono la habilidad heladera
+, lo activare con G
 
 paso 4
 
-tambien podras controlar al enemigo con w,a,s,d y las habilidades con
-f,g,h, 
-
-paso 5
-
-destruir al enemigo 
+destruir al enemigo o al jugador
