@@ -60,6 +60,8 @@
     {"name":"sanacion","order":9,"path":"scripts/sanacion/sanacion.yy",},
     {"name":"temblores","order":10,"path":"scripts/temblores/temblores.yy",},
     {"name":"terremoto","order":11,"path":"scripts/terremoto/terremoto.yy",},
+    {"name":"bola_de_fuego_animado_2","order":17,"path":"sprites/bola_de_fuego_animado_2/bola_de_fuego_animado_2.yy",},
+    {"name":"bola_de_fuego_animado","order":16,"path":"sprites/bola_de_fuego_animado/bola_de_fuego_animado.yy",},
     {"name":"bosque","order":3,"path":"sprites/bosque/bosque.yy",},
     {"name":"ciudad","order":1,"path":"sprites/ciudad/ciudad.yy",},
     {"name":"efecto_explosion","order":15,"path":"sprites/efecto_explosion/efecto_explosion.yy",},
@@ -93,6 +95,8 @@
     {"name":"Sprite38","order":25,"path":"sprites/Sprite38/Sprite38.yy",},
     {"name":"Sprite39","order":26,"path":"sprites/Sprite39/Sprite39.yy",},
     {"name":"Sprite4","order":17,"path":"sprites/Sprite4/Sprite4.yy",},
+    {"name":"Sprite43","order":27,"path":"sprites/Sprite43/Sprite43.yy",},
+    {"name":"Sprite44","order":28,"path":"sprites/Sprite44/Sprite44.yy",},
     {"name":"Sprite8","order":1,"path":"sprites/Sprite8/Sprite8.yy",},
   ],
 }

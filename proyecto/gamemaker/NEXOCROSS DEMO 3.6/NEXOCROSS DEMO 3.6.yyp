@@ -41,7 +41,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.0.157",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"NEXOCROSS DEMO 3.6",
   "resources":[
@@ -83,6 +83,8 @@
     {"id":{"name":"temblores","path":"scripts/temblores/temblores.yy",},},
     {"id":{"name":"terremoto","path":"scripts/terremoto/terremoto.yy",},},
     {"id":{"name":"zona_volcanica","path":"scripts/zona_volcanica/zona_volcanica.yy",},},
+    {"id":{"name":"bola_de_fuego_animado_2","path":"sprites/bola_de_fuego_animado_2/bola_de_fuego_animado_2.yy",},},
+    {"id":{"name":"bola_de_fuego_animado","path":"sprites/bola_de_fuego_animado/bola_de_fuego_animado.yy",},},
     {"id":{"name":"bosque","path":"sprites/bosque/bosque.yy",},},
     {"id":{"name":"ciudad","path":"sprites/ciudad/ciudad.yy",},},
     {"id":{"name":"efecto_explosion","path":"sprites/efecto_explosion/efecto_explosion.yy",},},
@@ -121,6 +123,8 @@
     {"id":{"name":"Sprite38","path":"sprites/Sprite38/Sprite38.yy",},},
     {"id":{"name":"Sprite39","path":"sprites/Sprite39/Sprite39.yy",},},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
+    {"id":{"name":"Sprite43","path":"sprites/Sprite43/Sprite43.yy",},},
+    {"id":{"name":"Sprite44","path":"sprites/Sprite44/Sprite44.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},},

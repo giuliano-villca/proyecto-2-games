@@ -46,6 +46,7 @@ if (new_col >= 0 && new_col < array_length(global.panels[0]) &&
                 previous_col >= 0 && previous_row >= 0 &&
                 global.panels[previous_row][previous_col].tipo == 5) {
                 global.panels[previous_row][previous_col].tipo = 6;
+				global.panels[previous_row][previous_col].timer = global.panel_return_time; // Reiniciar el temporizador
             }
 
             // Actualizar las posiciones anteriores

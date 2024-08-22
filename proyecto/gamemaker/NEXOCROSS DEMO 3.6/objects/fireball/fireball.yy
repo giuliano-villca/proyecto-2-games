@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite12",
-    "path":"sprites/Sprite12/Sprite12.yy",
+    "name":"bola_de_fuego_animado_2",
+    "path":"sprites/bola_de_fuego_animado_2/bola_de_fuego_animado_2.yy",
   },
   "spriteMaskId":null,
   "visible":true,
