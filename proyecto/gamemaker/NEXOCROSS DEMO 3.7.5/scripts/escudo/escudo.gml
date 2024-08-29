@@ -4,11 +4,11 @@ function escudo(entity_type) {
     // Activar el escudo e inmunidad
     var escudo_x;
 	var escudo_y;
-    var escudo_duracion_frames = 5 * room_speed; // 5 segundos de duración
+    var escudo_duracion_frames = 2 * room_speed; // 5 segundos de duración
 
     if (entity_type == "obj_player") {
         inmunidad = true;
-		inmunidad_tiempo = 5 * room_speed;
+		inmunidad_tiempo = 2 * room_speed;
         obj_player.bloqueo_activo = true;
         obj_player.bloqueo_duracion = escudo_duracion_frames;
         escudo_x = obj_player.x + 45; // Posición inicial para el jugador
@@ -16,7 +16,7 @@ function escudo(entity_type) {
         // Crear el escudo y asociarlo con el jugador
     } else if (entity_type == "obj_enemy") {
         inmunidad = true;
-		inmunidad_tiempo = 5 * room_speed;
+		inmunidad_tiempo = 2 * room_speed;
         obj_enemy.bloqueo_activo = true;
         obj_enemy.bloqueo_duracion = escudo_duracion_frames;
 		escudo_x = obj_enemy.x;

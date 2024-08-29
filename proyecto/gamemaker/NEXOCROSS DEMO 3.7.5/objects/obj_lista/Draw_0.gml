@@ -5,7 +5,7 @@ draw_rectangle(lista_combate_x, lista_combate_y,
 lista_combate_x + lista_combate_ancho, 
 lista_combate_y + lista_combate_alto, false);
 
-var teclas = ["U", "I", "J", "K"];
+var teclas = ["R", "T", "F", "G"];
 var posiciones = [
     {x: lista_combate_x + 10, y: lista_combate_y + 50}, // Primera columna, primera fila
     {x: lista_combate_x + 370, y: lista_combate_y + 50}, // Segunda columna, primera fila
@@ -20,18 +20,18 @@ if (instance_exists(obj_player)) {
     switch (obj_player.grupo_habilidades_activo) {
         case 0:
             grupo_texto = "Equipamiento 1";
-			texto_izquierda = "grupo 3 (e-nye)";
-            texto_derecha = "grupo 2 (P)";
+			texto_izquierda = "grupo 3 (Y)";
+            texto_derecha = "grupo 2 (H)";
             break;
         case 1:
             grupo_texto = "Equipamiento 2";
-			texto_izquierda = "grupo 1 (e-nye)";
-            texto_derecha = "grupo 3 (P)";
+			texto_izquierda = "grupo 1 (Y)";
+            texto_derecha = "grupo 3 (H)";
             break;
         case 2:
             grupo_texto = "Equipamiento 3";
-			texto_izquierda = "grupo 2 (e-nye)";
-            texto_derecha = "grupo 1 (P)";
+			texto_izquierda = "grupo 2 (Y)";
+            texto_derecha = "grupo 1 (H)";
             break;
     }
 }
@@ -73,7 +73,7 @@ for (var i = 0; i < 4; i++) {
 draw_set_color(c_black);
 draw_text(lista_combate_x + 210, lista_combate_y + 15, "Cambiar Grupo (P / e-nye)");
 */
-
+/*
 //lista del enemigo
 draw_set_color(c_green);
 draw_rectangle(lista_combate_x_enemy, lista_combate_y_enemy, 

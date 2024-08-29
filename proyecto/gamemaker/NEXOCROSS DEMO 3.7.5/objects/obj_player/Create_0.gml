@@ -33,8 +33,8 @@ for (var i = 0; i < array_length(global.habilidades_seleccionadas); i++) {
 }
 
 // Create Event
-vida = 100; // Vida inicial del personaje
-vidamaxima = 100;// vida maxima del personaje
+vida = 150; // Vida inicial del personaje
+vidamaxima = 150;// vida maxima del personaje
 
 // Variables de inmunidad
 inmunidad = false;

@@ -36,6 +36,7 @@
     {"name":"obj_espada_lunar_efecto","order":2,"path":"objects/obj_espada_lunar_efecto/obj_espada_lunar_efecto.yy",},
     {"name":"obj_explosion","order":4,"path":"objects/obj_explosion/obj_explosion.yy",},
     {"name":"obj_inventory_enemy","order":7,"path":"objects/obj_inventory_enemy/obj_inventory_enemy.yy",},
+    {"name":"obj_lista_enemy","order":15,"path":"objects/obj_lista_enemy/obj_lista_enemy.yy",},
     {"name":"obj_lista","order":11,"path":"objects/obj_lista/obj_lista.yy",},
     {"name":"obj_panel","order":6,"path":"objects/obj_panel/obj_panel.yy",},
     {"name":"obj_player","order":3,"path":"objects/obj_player/obj_player.yy",},

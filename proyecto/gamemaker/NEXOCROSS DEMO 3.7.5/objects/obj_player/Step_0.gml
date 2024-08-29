@@ -5,13 +5,13 @@ var new_y = y;
 var previous_x = x;
 var previous_y = y;
 
-if (keyboard_check_pressed(vk_left)) {
+if (keyboard_check_pressed(ord("A"))) {
     new_x -= global.panel_width;
-} else if (keyboard_check_pressed(vk_right)) {
+} else if (keyboard_check_pressed(ord("D"))) {
     new_x += global.panel_width;
-} else if (keyboard_check_pressed(vk_up)) {
+} else if (keyboard_check_pressed(ord("W"))) {
     new_y -= global.panel_height;
-} else if (keyboard_check_pressed(vk_down)) {
+} else if (keyboard_check_pressed(ord("S"))) {
     new_y += global.panel_height;
 }
 
@@ -70,13 +70,13 @@ if (global.panels[current_row][current_col].tipo == 2) { // Tipo 2 es panel de h
         var next_x = x;
         var next_y = y;
         
-        if (keyboard_check(vk_left)) {
+        if (keyboard_check_pressed(ord("A"))) {
             next_x -= global.panel_width;
-        } else if (keyboard_check(vk_right)) {
+        } else if (keyboard_check_pressed(ord("D"))) {
             next_x += global.panel_width;
-        } else if (keyboard_check(vk_up)) {
+        } else if (keyboard_check_pressed(ord("W"))) {
             next_y -= global.panel_height;
-        } else if (keyboard_check(vk_down)) {
+        } else if (keyboard_check_pressed(ord("S"))) {
             next_y += global.panel_height;
         } else {
             sliding = false;
@@ -141,16 +141,16 @@ if (global.panels[current_row][current_col].tipo == 4) {
 // Asegúrate de definir offset en algún punto antes de esta línea
 var offset = grupo_habilidades_activo * 4; // o donde sea necesario calcular el offset
 
-if (keyboard_check_pressed(ord("U")) && global.habilidades_seleccionadas[offset + 0] != -1) {
+if (keyboard_check_pressed(ord("R")) && global.habilidades_seleccionadas[offset + 0] != -1) {
     ejecutar_habilidad(global.habilidades_seleccionadas[offset + 0], "obj_player");
 }
-if (keyboard_check_pressed(ord("I")) && global.habilidades_seleccionadas[offset + 1] != -1) {
+if (keyboard_check_pressed(ord("T")) && global.habilidades_seleccionadas[offset + 1] != -1) {
     ejecutar_habilidad(global.habilidades_seleccionadas[offset + 1], "obj_player");
 }
-if (keyboard_check_pressed(ord("J")) && global.habilidades_seleccionadas[offset + 2] != -1) {
+if (keyboard_check_pressed(ord("F")) && global.habilidades_seleccionadas[offset + 2] != -1) {
     ejecutar_habilidad(global.habilidades_seleccionadas[offset + 2], "obj_player");
 }
-if (keyboard_check_pressed(ord("K")) && global.habilidades_seleccionadas[offset + 3] != -1) {
+if (keyboard_check_pressed(ord("G")) && global.habilidades_seleccionadas[offset + 3] != -1) {
     ejecutar_habilidad(global.habilidades_seleccionadas[offset + 3], "obj_player");
 }
 //---------------------------------
@@ -161,21 +161,18 @@ if (keyboard_check_pressed(ord("P"))) {
 }
 */
 
-if (keyboard_check_pressed(ord("P"))) {
+if (keyboard_check_pressed(ord("Y"))) {
     grupo_habilidades_activo++;
     if (grupo_habilidades_activo > 2) { // Regresa al primer grupo si se pasa del último grupo
         grupo_habilidades_activo = 0; // Regresa al último grupo si se pasa del primer grupo
     }
 }
 
-if (keyboard_lastchar == "ñ" || keyboard_lastchar == "Ñ") { //para que funcione la tecla Ñ
+if (keyboard_check_pressed(ord("H"))) { //para que funcione la tecla Ñ
     grupo_habilidades_activo--;       // Regresa al último grupo si se pasa del primer grupo
     if (grupo_habilidades_activo < 0) {
         grupo_habilidades_activo = 2;
     }
-    
-    // Limpiar `keyboard_lastchar` para evitar que otras teclas lo activen después
-    keyboard_lastchar = "";
 }
 //--------------------------------------------------------------------------------
 

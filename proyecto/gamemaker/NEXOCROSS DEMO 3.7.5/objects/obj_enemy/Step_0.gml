@@ -6,13 +6,13 @@ var previous_x = x;
 var previous_y = y;
 
 // Detectar entradas del teclado y ajustar la posición del enemigo en consecuencia
-if (keyboard_check_pressed(ord("A"))) {
+if (keyboard_check_pressed(vk_left)) {
     new_x -= global.panel_width;
-} else if (keyboard_check_pressed(ord("D"))) {
+} else if (keyboard_check_pressed(vk_right)) {
     new_x += global.panel_width;
-} else if (keyboard_check_pressed(ord("W"))) {
+} else if (keyboard_check_pressed(vk_up)) {
     new_y -= global.panel_height;
-} else if (keyboard_check_pressed(ord("S"))) {
+} else if (keyboard_check_pressed(vk_down)) {
     new_y += global.panel_height;
 }
 
@@ -89,13 +89,13 @@ if (global.panels[current_row][current_col].tipo == 2) { // Tipo 2 es panel de h
         var next_x = x;
         var next_y = y;
         
-        if (keyboard_check(ord("A"))) {
+        if (keyboard_check_pressed(vk_left)) {
             next_x -= global.panel_width;
-        } else if (keyboard_check(ord("D"))) {
+        } else if (keyboard_check_pressed(vk_right)) {
             next_x += global.panel_width;
-        } else if (keyboard_check(ord("W"))) {
+        } else if (keyboard_check_pressed(vk_up)) {
             next_y -= global.panel_height;
-        } else if (keyboard_check(ord("S"))) {
+        } else if (keyboard_check_pressed(vk_down)) {
             next_y += global.panel_height;
         } else {
             sliding = false;
@@ -125,36 +125,44 @@ if (global.panels[current_row][current_col].tipo == 2) { // Tipo 2 es panel de h
         }
     }
 }
-
+for (var i = 0; i < array_length(global.habilidades_seleccionadas_enemy); i++) {
+    var habilidad = global.habilidades_seleccionadas_enemy[i];
+    if (habilidad != -1 && global.habilidad_estado_enemy[? habilidad] > 0) {
+        global.habilidad_estado_enemy[? habilidad]--;
+    }
+}
 
 var offset_enemy = grupo_habilidades_activo_enemy * 4; // o donde sea necesario calcular el offset
 
-if (keyboard_check_pressed(ord("R")) && global.habilidades_seleccionadas_enemy[offset_enemy + 0] != -1) {
+if (keyboard_check_pressed(ord("I")) && global.habilidades_seleccionadas_enemy[offset_enemy + 0] != -1) {
     ejecutar_habilidad_enemy(global.habilidades_seleccionadas_enemy[offset_enemy + 0], "obj_enemy");
 }
-if (keyboard_check_pressed(ord("T")) && global.habilidades_seleccionadas_enemy[offset_enemy + 1] != -1) {
+if (keyboard_check_pressed(ord("O")) && global.habilidades_seleccionadas_enemy[offset_enemy + 1] != -1) {
     ejecutar_habilidad_enemy(global.habilidades_seleccionadas_enemy[offset_enemy + 1], "obj_enemy");
 }
-if (keyboard_check_pressed(ord("F")) && global.habilidades_seleccionadas_enemy[offset_enemy + 2] != -1) {
+if (keyboard_check_pressed(ord("K")) && global.habilidades_seleccionadas_enemy[offset_enemy + 2] != -1) {
     ejecutar_habilidad_enemy(global.habilidades_seleccionadas_enemy[offset_enemy + 2], "obj_enemy");
 }
-if (keyboard_check_pressed(ord("G")) && global.habilidades_seleccionadas_enemy[offset_enemy + 3] != -1) {
+if (keyboard_check_pressed(ord("L")) && global.habilidades_seleccionadas_enemy[offset_enemy + 3] != -1) {
     ejecutar_habilidad_enemy(global.habilidades_seleccionadas_enemy[offset_enemy + 3], "obj_enemy");
 }
 
 
-if (keyboard_check_pressed(ord("Y"))) {
+if (keyboard_check_pressed(ord("P"))) {
     grupo_habilidades_activo_enemy++;
     if (grupo_habilidades_activo_enemy > 2) { // Regresa al primer grupo si se pasa del último grupo
         grupo_habilidades_activo_enemy = 0; // Regresa al último grupo si se pasa del primer grupo
     }
 }
 
-if (keyboard_check_pressed(ord("H"))) { //para que funcione la tecla Ñ
+if (keyboard_lastchar == "ñ" || keyboard_lastchar == "Ñ") { //para que funcione la tecla Ñ
     grupo_habilidades_activo_enemy--;       // Regresa al último grupo si se pasa del primer grupo
     if (grupo_habilidades_activo_enemy < 0) {
         grupo_habilidades_activo_enemy = 2;
     }
+    
+    // Limpiar `keyboard_lastchar` para evitar que otras teclas lo activen después
+    keyboard_lastchar = "";
 }
 
 //--------------------------------------------------------------------------------

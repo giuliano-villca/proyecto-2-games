@@ -5,11 +5,11 @@ function ejecutar_habilidad_enemy(habilidad, tipo_entidad) {
         switch (habilidad) {
 				case "area_steal":
                     area_steal(entity_type);
-                    global.habilidad_estado_enemy[? habilidad] = 6 * room_speed; // 6 segundos de cooldown
+                    global.habilidad_estado_enemy[? habilidad] = 10 * room_speed; // 6 segundos de cooldown
                     break;
                 case "panel_grab":
                     panel_grab(entity_type);
-                    global.habilidad_estado_enemy[? habilidad] = 2 * room_speed; // 2 segundos de cooldown
+                    global.habilidad_estado_enemy[? habilidad] = 5 * room_speed; // 2 segundos de cooldown
                     break;
                 case "heladera":
                     heladera();
@@ -37,7 +37,7 @@ function ejecutar_habilidad_enemy(habilidad, tipo_entidad) {
                     break;
                 case "terremoto":
                     terremoto();
-                    global.habilidad_estado_enemy[? habilidad] = 1 * room_speed; // 25 segundos de cooldown
+                    global.habilidad_estado_enemy[? habilidad] = 30 * room_speed; // 25 segundos de cooldown
                     break;
                 case "espada":
                     espada(entity_type);
@@ -45,19 +45,19 @@ function ejecutar_habilidad_enemy(habilidad, tipo_entidad) {
                     break;
                 case "espada lunar":
                     espada_lunar(entity_type);
-                    global.habilidad_estado_enemy[? habilidad] = 1 * room_speed; // 18 segundos de cooldown
+                    global.habilidad_estado_enemy[? habilidad] = 4 * room_speed; // 18 segundos de cooldown
                     break;
                 case "bomba":
                     bomba(entity_type);
-                    global.habilidad_estado_enemy[? habilidad] = 1 * room_speed; // 18 segundos de cooldown
+                    global.habilidad_estado_enemy[? habilidad] = 5 * room_speed; // 18 segundos de cooldown
                     break;
 		        case "invisible":
                     invisible();
-                    global.habilidad_estado_enemy[? habilidad] = 2 * room_speed; // 18 segundos de cooldown
+                    global.habilidad_estado_enemy[? habilidad] = 40 * room_speed; // 18 segundos de cooldown
                     break;
 		        case "escudo":
                     escudo(entity_type);
-                    global.habilidad_estado_enemy[? habilidad] = 2 * room_speed; // 18 segundos de cooldown
+                    global.habilidad_estado_enemy[? habilidad] = 3 * room_speed; // 18 segundos de cooldown
                     break;
             default:
                 break;

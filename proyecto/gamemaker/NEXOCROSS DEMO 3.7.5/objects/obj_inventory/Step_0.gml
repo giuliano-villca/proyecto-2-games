@@ -1,19 +1,19 @@
 // Evento Step de obj_inventory
 
 // control player
-if (keyboard_check_pressed(vk_up)) {
+if (keyboard_check_pressed(ord("W"))) {
     selected_habilidad = max(0, selected_habilidad - 1);
     if (selected_habilidad < scroll_offset + 5) {
         scroll_offset = max(0, scroll_offset - 1);
     }
 }
-if (keyboard_check_pressed(vk_down)) {
+if (keyboard_check_pressed(ord("S"))) {
     selected_habilidad = min(max_disponibles - 1, selected_habilidad + 1);
     if (selected_habilidad >= scroll_offset + 6) {  // Ajustar el valor aquí para cambiar el comportamiento del desplazamiento
         scroll_offset = min(max_scroll, scroll_offset + 1);
     }
 }
-if (keyboard_check_pressed(ord("U"))) {
+if (keyboard_check_pressed(ord("R"))) {
     for (var i = 0; i < 12; i++) {
         if (equipadas_habilidades[i] == -1) {
             equipadas_habilidades[i] = selected_habilidad;
@@ -21,7 +21,7 @@ if (keyboard_check_pressed(ord("U"))) {
         }
     }
 }
-if (keyboard_check_pressed(ord("I"))) {
+if (keyboard_check_pressed(ord("T"))) {
     for (var i = 0; i < 12; i++) {
         if (equipadas_habilidades[i] == selected_habilidad) {
             equipadas_habilidades[i] = -1;
@@ -30,19 +30,19 @@ if (keyboard_check_pressed(ord("I"))) {
     }
 }
 // control enemy
-if (keyboard_check_pressed(ord("W"))) {
+if (keyboard_check_pressed(vk_up)) {
     selected_habilidad_enemy = max(0, selected_habilidad_enemy - 1);
     if (selected_habilidad_enemy < scroll_offset_enemy + 5) {
         scroll_offset_enemy = max(0, scroll_offset_enemy - 1);
     }
 }
-if (keyboard_check_pressed(ord("S"))) {
+if (keyboard_check_pressed(vk_down)) {
     selected_habilidad_enemy = min(max_disponibles_enemy - 1, selected_habilidad_enemy + 1);
     if (selected_habilidad_enemy >= scroll_offset_enemy + 6) {   // Ajustar el valor aquí para cambiar el comportamiento del desplazamiento
         scroll_offset_enemy = min(max_scroll_enemy, scroll_offset_enemy + 1);
     }
 }
-if (keyboard_check_pressed(ord("R"))) {
+if (keyboard_check_pressed(ord("I"))) {
     for (var i = 0; i < 12; i++) {
         if (equipadas_habilidades_enemy[i] == -1) {
             equipadas_habilidades_enemy[i] = selected_habilidad_enemy;
@@ -50,7 +50,7 @@ if (keyboard_check_pressed(ord("R"))) {
         }
     }
 }
-if (keyboard_check_pressed(ord("T"))) {
+if (keyboard_check_pressed(ord("O"))) {
     for (var i = 0; i < 12; i++) {
         if (equipadas_habilidades_enemy[i] == selected_habilidad_enemy) {
             equipadas_habilidades_enemy[i] = -1;
