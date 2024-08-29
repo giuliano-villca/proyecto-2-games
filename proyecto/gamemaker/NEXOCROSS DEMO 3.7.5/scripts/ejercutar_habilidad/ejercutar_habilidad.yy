@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ejercutar_habilidad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ejercutar_habilidad",
+  "parent":{
+    "name":"inventario",
+    "path":"folders/Objects/inventario.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
