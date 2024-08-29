@@ -73,6 +73,7 @@
     {"name":"espada_efecto_animado","order":7,"path":"sprites/espada_efecto_animado/espada_efecto_animado.yy",},
     {"name":"espada_lunar_efecto_animado","order":11,"path":"sprites/espada_lunar_efecto_animado/espada_lunar_efecto_animado.yy",},
     {"name":"lol","order":6,"path":"sprites/lol/lol.yy",},
+    {"name":"megadibu","order":13,"path":"sprites/megadibu/megadibu.yy",},
     {"name":"panel_agrietado_azul","order":2,"path":"sprites/panel_agrietado_azul/panel_agrietado_azul.yy",},
     {"name":"panel_agrietado_rojo","order":2,"path":"sprites/panel_agrietado_rojo/panel_agrietado_rojo.yy",},
     {"name":"panel_hielo_azul","order":1,"path":"sprites/panel_hielo_azul/panel_hielo_azul.yy",},
