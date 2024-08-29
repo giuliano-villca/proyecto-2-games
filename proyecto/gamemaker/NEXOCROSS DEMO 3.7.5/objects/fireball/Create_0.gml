@@ -14,5 +14,6 @@ if (launch_type == "obj_player") {
     image_xscale = 1.3; // Orientar a la derecha
 	image_yscale = 1.3;
 } else if (launch_type == "obj_enemy") {
-    image_xscale = -1; // Orientar a la izquierda
+    image_xscale = -1.3; // Orientar a la derecha
+	image_yscale = -1.3;
 }
