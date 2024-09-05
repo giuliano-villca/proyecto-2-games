@@ -48,7 +48,7 @@ function ejecutar_habilidad(habilidad, tipo_entidad) {
                     break;
                 case "bomba":
                     bomba(entity_type);
-                    global.habilidad_estado[? habilidad] = 0 * room_speed; // 18 segundos de cooldown
+                    global.habilidad_estado[? habilidad] = 5 * room_speed; // 18 segundos de cooldown
                     break;
 		        case "invisible":
                     invisible();

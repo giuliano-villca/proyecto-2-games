@@ -21,7 +21,6 @@ else {
 
     // Verificar si el panel está libre de estructuras
     if (global.panels[start_row][start_col].estructura) {
-        show_message("No puedes colocar una torreta aquí. El panel ya está ocupado.");
         return; // No colocar la torreta si ya hay una estructura
     }
 

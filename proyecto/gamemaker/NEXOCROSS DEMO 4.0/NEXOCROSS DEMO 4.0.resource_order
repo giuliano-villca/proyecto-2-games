@@ -43,6 +43,7 @@
     {"name":"obj_muro","order":1,"path":"objects/obj_muro/obj_muro.yy",},
     {"name":"obj_panel","order":6,"path":"objects/obj_panel/obj_panel.yy",},
     {"name":"obj_player","order":3,"path":"objects/obj_player/obj_player.yy",},
+    {"name":"obj_tornado","order":8,"path":"objects/obj_tornado/obj_tornado.yy",},
     {"name":"panelll","order":8,"path":"objects/panelll/panelll.yy",},
     {"name":"play","order":8,"path":"objects/play/play.yy",},
     {"name":"room_inicio","order":2,"path":"rooms/room_inicio/room_inicio.yy",},
@@ -95,6 +96,7 @@
     {"name":"spr_muro_izquierda","order":17,"path":"sprites/spr_muro_izquierda/spr_muro_izquierda.yy",},
     {"name":"spr_muro","order":16,"path":"sprites/spr_muro/spr_muro.yy",},
     {"name":"spr_panel_azul","order":4,"path":"sprites/spr_panel_azul/spr_panel_azul.yy",},
+    {"name":"spr_tornado","order":18,"path":"sprites/spr_tornado/spr_tornado.yy",},
     {"name":"spr_torreta_ballesta_izquierdo","order":15,"path":"sprites/spr_torreta_ballesta_izquierdo/spr_torreta_ballesta_izquierdo.yy",},
     {"name":"spr_torreta_ballesta","order":13,"path":"sprites/spr_torreta_ballesta/spr_torreta_ballesta.yy",},
     {"name":"Sprite10","order":2,"path":"sprites/Sprite10/Sprite10.yy",},
@@ -115,6 +117,7 @@
     {"name":"Sprite44","order":28,"path":"sprites/Sprite44/Sprite44.yy",},
     {"name":"Sprite50","order":29,"path":"sprites/Sprite50/Sprite50.yy",},
     {"name":"Sprite54","order":30,"path":"sprites/Sprite54/Sprite54.yy",},
+    {"name":"Sprite56","order":31,"path":"sprites/Sprite56/Sprite56.yy",},
     {"name":"Sprite8","order":1,"path":"sprites/Sprite8/Sprite8.yy",},
   ],
 }

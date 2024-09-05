@@ -29,7 +29,7 @@ global.habilidades_seleccionadas = array_create(12, -1);
 equipadas_habilidades_enemy = array_create(12, -1); // Inicializar las habilidades equipadas del enemigo
 habilidades_disponibles_enemy = ["area_steal", "panel_grab", "heladera", "jardin", "bola de fuego",
 "sanacion", "zona volcanica", "temblores", "terremoto", "espada", "espada lunar", "bomba",
-"invisible", "escudo", "torreta ballesta", "muro"]; // Habilidades disponibles del enemigo
+"invisible", "escudo", "reparacion", "torreta ballesta", "muro"]; // Habilidades disponibles del enemigo
 
 selected_habilidad_enemy = 0;
 max_disponibles_enemy = array_length(habilidades_disponibles_enemy);
