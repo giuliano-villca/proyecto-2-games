@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"panel_grab",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"panel_grab",
+  "parent":{
+    "name":"soporte",
+    "path":"folders/Scripts/habilidades/soporte.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

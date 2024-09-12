@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"zona_volcanica",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"zona_volcanica",
+  "parent":{
+    "name":"soporte",
+    "path":"folders/Scripts/habilidades/soporte.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
