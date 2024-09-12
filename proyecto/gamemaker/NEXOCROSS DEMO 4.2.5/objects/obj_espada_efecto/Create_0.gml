@@ -1,5 +1,5 @@
 // En el evento Create de obj_sword
-sword_damage = 15; // Daño de la espada
+sword_damage = 30; // Daño de la espada
 panel_height = global.panel_height; // Altura del panel
 sword_range = 0; // Rango de un panel adelante
 attack_type = argument0; // Tipo de entidad que ataca

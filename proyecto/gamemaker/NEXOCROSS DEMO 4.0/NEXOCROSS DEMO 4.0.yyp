@@ -92,6 +92,7 @@
     {"id":{"name":"sanacion","path":"scripts/sanacion/sanacion.yy",},},
     {"id":{"name":"temblores","path":"scripts/temblores/temblores.yy",},},
     {"id":{"name":"terremoto","path":"scripts/terremoto/terremoto.yy",},},
+    {"id":{"name":"tornado","path":"scripts/tornado/tornado.yy",},},
     {"id":{"name":"torreta_ballesta","path":"scripts/torreta_ballesta/torreta_ballesta.yy",},},
     {"id":{"name":"zona_volcanica","path":"scripts/zona_volcanica/zona_volcanica.yy",},},
     {"id":{"name":"its_going_down_now","path":"sounds/its_going_down_now/its_going_down_now.yy",},},

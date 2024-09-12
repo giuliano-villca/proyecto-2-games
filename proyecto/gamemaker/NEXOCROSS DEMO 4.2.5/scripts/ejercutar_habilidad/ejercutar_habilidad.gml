@@ -64,7 +64,7 @@ function ejecutar_habilidad(habilidad, tipo_entidad) {
                     break;
 			    case "torreta ballesta":
                     torreta_ballesta(entity_type);
-                    global.habilidad_estado[? habilidad] = 5 * room_speed; // 18 segundos de cooldown
+                    global.habilidad_estado[? habilidad] = 20 * room_speed; // 18 segundos de cooldown
                     break;
 			    case "muro":
                     muro(entity_type);
@@ -72,7 +72,7 @@ function ejecutar_habilidad(habilidad, tipo_entidad) {
                     break;
 	   	        case "tornado":
                     tornado(entity_type);
-                    global.habilidad_estado[? habilidad] = 2 * room_speed; // 18 segundos de cooldown
+                    global.habilidad_estado[? habilidad] = 5 * room_speed; // 18 segundos de cooldown
                     break;
 	   	        case "aro electrico":
                     aro_electrico(entity_type);

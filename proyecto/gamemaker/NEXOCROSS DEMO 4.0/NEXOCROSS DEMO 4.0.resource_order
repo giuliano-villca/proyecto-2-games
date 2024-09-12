@@ -69,6 +69,7 @@
     {"name":"sanacion","order":9,"path":"scripts/sanacion/sanacion.yy",},
     {"name":"temblores","order":10,"path":"scripts/temblores/temblores.yy",},
     {"name":"terremoto","order":11,"path":"scripts/terremoto/terremoto.yy",},
+    {"name":"tornado","order":18,"path":"scripts/tornado/tornado.yy",},
     {"name":"torreta_ballesta","order":16,"path":"scripts/torreta_ballesta/torreta_ballesta.yy",},
     {"name":"its_going_down_now","order":12,"path":"sounds/its_going_down_now/its_going_down_now.yy",},
     {"name":"bola_de_fuego_animado_2","order":10,"path":"sprites/bola_de_fuego_animado_2/bola_de_fuego_animado_2.yy",},

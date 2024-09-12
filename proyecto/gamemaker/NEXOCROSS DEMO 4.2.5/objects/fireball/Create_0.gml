@@ -1,5 +1,5 @@
 // En el evento Create de obj_fireball
-fireball_damage = 10;
+fireball_damage = 15;
 damage_type = "fuego";  // Puede ser "fuego", "agua", "planta", etc.
 panel_height = global.panel_height; // Asegúrate de que panel_height esté definido
 speed = 6; // Ajusta la velocidad según sea necesario

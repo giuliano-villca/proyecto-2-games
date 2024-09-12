@@ -1,5 +1,5 @@
 // En el evento Create de obj_espada_lunar
-sword_damage = 25; // Daño de la espada
+sword_damage = 40; // Daño de la espada
 panel_height = global.panel_height; // Altura del panel
 panel_width = global.panel_width; // Ancho del panel
 sword_range = 0; // Rango de un panel adelante

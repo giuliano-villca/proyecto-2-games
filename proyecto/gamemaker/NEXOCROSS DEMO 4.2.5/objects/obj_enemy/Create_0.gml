@@ -39,8 +39,8 @@ estado_paralizado = "paralizado";
 estado_congelado = "congelado";
 
 
-vida = 150; // Vida inicial del personaje
-vidamaxima = 150;// vida maxima del personaje
+vida = 200; // Vida inicial del personaje
+vidamaxima = 200;// vida maxima del personaje
 
 // Variables de inmunidad
 inmunidad = false;
