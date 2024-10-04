@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"bomba",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bomba",
+  "parent":{
+    "name":"ataque",
+    "path":"folders/Scripts/habilidades/ataque.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

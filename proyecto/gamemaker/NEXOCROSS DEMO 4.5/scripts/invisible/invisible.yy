@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"invisible",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"invisible",
+  "parent":{
+    "name":"soporte",
+    "path":"folders/Scripts/habilidades/soporte.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

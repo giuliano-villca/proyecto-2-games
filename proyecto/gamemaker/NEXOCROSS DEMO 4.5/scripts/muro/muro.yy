@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"muro",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"muro",
+  "parent":{
+    "name":"invocacion",
+    "path":"folders/Scripts/habilidades/invocacion.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

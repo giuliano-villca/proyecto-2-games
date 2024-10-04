@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"espada_infernal",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"espada_infernal",
+  "parent":{
+    "name":"ataque",
+    "path":"folders/Scripts/habilidades/ataque.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
