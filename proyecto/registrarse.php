@@ -63,7 +63,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../proyecto/img/logo.jpeg" class="logo-img">
+            <img src="../img/logo.jpeg" class="logo-img">
         </div>
         <nav class="menu">
             <a href=""></a>
@@ -96,8 +96,6 @@
             <button type="submit" name="registrarse">REGISTRARSE</button>
         </div>
     </form>
-
-    <a href="iniciar_s.php">Si ya tienes cuenta, haz click aquí</a>
 </body>
 
 </html>

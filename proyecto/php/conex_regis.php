@@ -61,7 +61,7 @@ if (isset($_POST['registrarse'])) {
 
     if ($resultado) {
         // El registro se realizó con éxito, puedes redirigir al usuario
-        header('Location: ../pagina_network.html');
+        header('Location: ../html/index.html');
         exit();
     } else {
         // Manejo de error en la consulta
