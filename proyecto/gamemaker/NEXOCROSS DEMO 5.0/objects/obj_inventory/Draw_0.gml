@@ -1,0 +1,55 @@
+// Evento Draw de obj_inventory
+draw_self();
+//selecion player
+for (var i = scroll_offset; i < min(scroll_offset + 11, max_disponibles); i++) { // Ajustar para dibujar habilidades desplazadas
+    if (i == selected_habilidad) {
+        draw_set_color(c_red); // Selección
+    } else {
+        draw_set_color(c_white);
+    }
+    draw_text(x_start, y_start + (i - scroll_offset) * spacing, habilidades_disponibles[i]);
+}
+
+
+for (var i = 0; i < 12; i++) {
+    if (equipadas_habilidades[i] != -1) {
+        draw_set_color(c_green); // Habilidad equipada
+        draw_text(equipado_x, equipado_y + i * 52, habilidades_disponibles[equipadas_habilidades[i]]);
+    }
+}
+//selecion enemy
+for (var i = scroll_offset_enemy; i < min(scroll_offset_enemy + 11, max_disponibles_enemy); i++) {
+    if (i == selected_habilidad_enemy) {
+        draw_set_color(c_blue); // Selección
+    } else {
+        draw_set_color(c_white);
+    }
+    draw_text(x_start_enemy, y_start_enemy + (i - scroll_offset_enemy) * spacing_enemy, habilidades_disponibles_enemy[i]);
+}
+
+for (var i = 0; i < 12; i++) {
+    if (equipadas_habilidades_enemy[i] != -1) {
+        draw_set_color(c_green); // Habilidad equipada
+        draw_text(equipado_x_enemy, equipado_y_enemy + i * 52, habilidades_disponibles_enemy[equipadas_habilidades_enemy[i]]);
+    }
+}
+
+// Dibujar el botón de combate
+draw_set_color(c_red);
+draw_rectangle(boton_combate_x, boton_combate_y, boton_combate_x + boton_combate_ancho, boton_combate_y + boton_combate_alto, false);
+draw_set_color(c_black);
+draw_text(boton_combate_x + 10, boton_combate_y + 10, "Combate");
+
+// Dibujar el fondo seleccionado
+draw_set_color(c_red);
+draw_text(600, 10, "Fondo seleccionado: " + global.fondo_seleccionado)
+;
+
+for (var i = 0; i < max_fondos; i++) {
+    if (i == selected_fondo) {
+        draw_set_color(c_yellow); // Color para el fondo seleccionado
+    } else {
+        draw_set_color(c_white);
+    }
+    draw_text(300 + (i * 200), 50, fondos_disponibles[i]);
+}

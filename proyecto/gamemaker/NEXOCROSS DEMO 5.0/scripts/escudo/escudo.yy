@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"escudo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"escudo",
+  "parent":{
+    "name":"soporte",
+    "path":"folders/Scripts/habilidades/soporte.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

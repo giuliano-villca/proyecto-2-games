@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"aro_electrico",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"aro_electrico",
+  "parent":{
+    "name":"ataque",
+    "path":"folders/Scripts/habilidades/ataque.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
